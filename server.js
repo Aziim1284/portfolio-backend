@@ -2,6 +2,7 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path')
 const cors = require('cors'); 
 const messageRoutes = require('./src/routes/feedbackRoutes');
 
@@ -14,6 +15,11 @@ app.use(cors({
 }));
 
 app.use(express.json());
+app.get("/" , (req ,res)=>{
+  res.status(200).json({"message": "heelo azeem here"})
+})
+// app.use(express.static(path.join(__dirname , "build")))
+// app.use("/app", express.static(path.join(__dirname , "build")));
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/messages_db', {
