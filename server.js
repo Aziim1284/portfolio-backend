@@ -15,14 +15,12 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.get("/" , (req ,res)=>{
-  res.status(200).json({"message": "heelo azeem here"})
-})
-// app.use(express.static(path.join(__dirname , "build")))
-// app.use("/app", express.static(path.join(__dirname , "build")));
+
+app.use(express.static(path.join(__dirname , "build")))
+app.use("/app", express.static(path.join(__dirname , "build")));
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/messages_db', {
+mongoose.connect('mongodb+srv://mohdazeem:azeem@aziimclusterstorage.sffurty.mongodb.net/portfolioDB?retryWrites=true&w=majority&appName=AziimClusterStorage', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
