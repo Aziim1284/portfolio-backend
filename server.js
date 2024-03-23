@@ -9,7 +9,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors()); // Use CORS middleware
+app.use(cors({
+  origin: 'https://portfolio-backend-vert-delta.vercel.app'
+}));
+
 app.use(express.json());
 
 // Connect to MongoDB
