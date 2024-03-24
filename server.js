@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'https://portfolio-backend-vert-delta.vercel.app'
+  origin: 'http://localhost:3000'
 }));
 
 app.use(express.json());
